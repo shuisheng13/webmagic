@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yhh.practice.springboot.dao.pachong.DmzjanimationMapper">
+  <resultMap id="BaseResultMap" type="com.yhh.practice.springboot.model.Dmzjanimation">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="hahawebname" jdbcType="VARCHAR" property="hahawebname" />
+    <result column="antag" jdbcType="VARCHAR" property="antag" />
+    <result column="japanname" jdbcType="VARCHAR" property="japanname" />
+    <result column="allname" jdbcType="VARCHAR" property="allname" />
+    <result column="year" jdbcType="VARCHAR" property="year" />
+    <result column="state" jdbcType="VARCHAR" property="state" />
+    <result column="tag" jdbcType="VARCHAR" property="tag" />
+    <result column="original" jdbcType="VARCHAR" property="original" />
+    <result column="Screenwriter" jdbcType="VARCHAR" property="screenwriter" />
+    <result column="company" jdbcType="VARCHAR" property="company" />
+    <result column="website" jdbcType="VARCHAR" property="website" />
+    <result column="content" jdbcType="VARCHAR" property="content" />
+    <result column="contentdetail" jdbcType="VARCHAR" property="contentdetail" />
+    <result column="goal" jdbcType="VARCHAR" property="goal" />
+    <result column="mentotal" jdbcType="VARCHAR" property="mentotal" />
+    <result column="url" jdbcType="VARCHAR" property="url" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, hahawebname, antag, japanname, allname, year, state, tag, original, Screenwriter, 
+    company, website, content, contentdetail, goal, mentotal, url
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from dmzjanimation
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from dmzjanimation
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.yhh.practice.springboot.model.Dmzjanimation">
+    insert into dmzjanimation (id, hahawebname, antag, 
+      japanname, allname, year, 
+      state, tag, original, 
+      Screenwriter, company, website, 
+      content, contentdetail, goal, 
+      mentotal, url)
+    values (#{id,jdbcType=INTEGER}, #{hahawebname,jdbcType=VARCHAR}, #{antag,jdbcType=VARCHAR}, 
+      #{japanname,jdbcType=VARCHAR}, #{allname,jdbcType=VARCHAR}, #{year,jdbcType=VARCHAR}, 
+      #{state,jdbcType=VARCHAR}, #{tag,jdbcType=VARCHAR}, #{original,jdbcType=VARCHAR}, 
+      #{screenwriter,jdbcType=VARCHAR}, #{company,jdbcType=VARCHAR}, #{website,jdbcType=VARCHAR}, 
+      #{content,jdbcType=VARCHAR}, #{contentdetail,jdbcType=VARCHAR}, #{goal,jdbcType=VARCHAR}, 
+      #{mentotal,jdbcType=VARCHAR}, #{url,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.yhh.practice.springboot.model.Dmzjanimation">
+    insert into dmzjanimation
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="hahawebname != null">
+        hahawebname,
+      </if>
+      <if test="antag != null">
+        antag,
+      </if>
+      <if test="japanname != null">
+        japanname,
+      </if>
+      <if test="allname != null">
+        allname,
+      </if>
+      <if test="year != null">
+        year,
+      </if>
+      <if test="state != null">
+        state,
+      </if>
+      <if test="tag != null">
+        tag,
+      </if>
+      <if test="original != null">
+        original,
+      </if>
+      <if test="screenwriter != null">
+        Screenwriter,
+      </if>
+      <if test="company != null">
+        company,
+      </if>
+      <if test="website != null">
+        website,
+      </if>
+      <if test="content != null">
+        content,
+      </if>
+      <if test="contentdetail != null">
+        contentdetail,
+      </if>
+      <if test="goal != null">
+        goal,
+      </if>
+      <if test="mentotal != null">
+        mentotal,
+      </if>
+      <if test="url != null">
+        url,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="hahawebname != null">
+        #{hahawebname,jdbcType=VARCHAR},
+      </if>
+      <if test="antag != null">
+        #{antag,jdbcType=VARCHAR},
+      </if>
+      <if test="japanname != null">
+        #{japanname,jdbcType=VARCHAR},
+      </if>
+      <if test="allname != null">
+        #{allname,jdbcType=VARCHAR},
+      </if>
+      <if test="year != null">
+        #{year,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null">
+        #{state,jdbcType=VARCHAR},
+      </if>
+      <if test="tag != null">
+        #{tag,jdbcType=VARCHAR},
+      </if>
+      <if test="original != null">
+        #{original,jdbcType=VARCHAR},
+      </if>
+      <if test="screenwriter != null">
+        #{screenwriter,jdbcType=VARCHAR},
+      </if>
+      <if test="company != null">
+        #{company,jdbcType=VARCHAR},
+      </if>
+      <if test="website != null">
+        #{website,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null">
+        #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="contentdetail != null">
+        #{contentdetail,jdbcType=VARCHAR},
+      </if>
+      <if test="goal != null">
+        #{goal,jdbcType=VARCHAR},
+      </if>
+      <if test="mentotal != null">
+        #{mentotal,jdbcType=VARCHAR},
+      </if>
+      <if test="url != null">
+        #{url,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.yhh.practice.springboot.model.Dmzjanimation">
+    update dmzjanimation
+    <set>
+      <if test="hahawebname != null">
+        hahawebname = #{hahawebname,jdbcType=VARCHAR},
+      </if>
+      <if test="antag != null">
+        antag = #{antag,jdbcType=VARCHAR},
+      </if>
+      <if test="japanname != null">
+        japanname = #{japanname,jdbcType=VARCHAR},
+      </if>
+      <if test="allname != null">
+        allname = #{allname,jdbcType=VARCHAR},
+      </if>
+      <if test="year != null">
+        year = #{year,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null">
+        state = #{state,jdbcType=VARCHAR},
+      </if>
+      <if test="tag != null">
+        tag = #{tag,jdbcType=VARCHAR},
+      </if>
+      <if test="original != null">
+        original = #{original,jdbcType=VARCHAR},
+      </if>
+      <if test="screenwriter != null">
+        Screenwriter = #{screenwriter,jdbcType=VARCHAR},
+      </if>
+      <if test="company != null">
+        company = #{company,jdbcType=VARCHAR},
+      </if>
+      <if test="website != null">
+        website = #{website,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null">
+        content = #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="contentdetail != null">
+        contentdetail = #{contentdetail,jdbcType=VARCHAR},
+      </if>
+      <if test="goal != null">
+        goal = #{goal,jdbcType=VARCHAR},
+      </if>
+      <if test="mentotal != null">
+        mentotal = #{mentotal,jdbcType=VARCHAR},
+      </if>
+      <if test="url != null">
+        url = #{url,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.yhh.practice.springboot.model.Dmzjanimation">
+    update dmzjanimation
+    set hahawebname = #{hahawebname,jdbcType=VARCHAR},
+      antag = #{antag,jdbcType=VARCHAR},
+      japanname = #{japanname,jdbcType=VARCHAR},
+      allname = #{allname,jdbcType=VARCHAR},
+      year = #{year,jdbcType=VARCHAR},
+      state = #{state,jdbcType=VARCHAR},
+      tag = #{tag,jdbcType=VARCHAR},
+      original = #{original,jdbcType=VARCHAR},
+      Screenwriter = #{screenwriter,jdbcType=VARCHAR},
+      company = #{company,jdbcType=VARCHAR},
+      website = #{website,jdbcType=VARCHAR},
+      content = #{content,jdbcType=VARCHAR},
+      contentdetail = #{contentdetail,jdbcType=VARCHAR},
+      goal = #{goal,jdbcType=VARCHAR},
+      mentotal = #{mentotal,jdbcType=VARCHAR},
+      url = #{url,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
